@@ -7,11 +7,11 @@
   </head>
   <body ng-controller="MainController">
     <h1>Typing Game!</h1>
-    <h3 ng-hide="!counter">Please type the following: {{ wordArray[wordNumber] }}</h3>
-    <h6 ng-hide="!counter">Current Score: {{ score }}</h6>
-    <h6>Timer Left: {{ counter }}</h6>
-    <input ng-model="answer" ng-keyup="checker()" ng-disabled="!counter"></input>
-    <h2 ng-hide="counter">Game Over! Final Score is: {{score}}</h2>
+    <h3 ng-hide="!counter || !start">Please type the following: {{ wordArray[wordNumber] }}</h3>
+    <input ng-model="answer" ng-click="startGame()" ng-keyup="checker()" ng-disabled="!counter"></input>
+    <h5>Time Left: {{ counter }}</h5>
+    <h5 ng-hide="!counter">Current Score: {{ score }}</h5>
+    <h2 ng-hide="counter">Game Over! Final Score is: {{score}}<button type="button" ng-click="resetGame()">Reset</button></h2>
     <!-- Scripts -->
     <script type="text/javascript" src="./js/app.js"></script>
   </body>
