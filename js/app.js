@@ -1,14 +1,14 @@
 var textApp = angular.module("hypertext", []);
 
-textApp.controller("MainController", ['$scope', function($scope) {
+textApp.controller("MainController", ['$scope', '$timeout', function($scope, $timeout) {
   $scope.wordNumber = 0;
   $scope.score = 0;
   $scope.wordArray = [
-    "Cat",
-    "Dog",
-    "CatDog",
-    "log",
-    "omgwtf"
+    "The cat in the hat",
+    "The dog never came back",
+    "big tall trees",
+    "log log gol gol",
+    "omgwtfbbq"
   ];
 
   $scope.checker = function() {
@@ -18,5 +18,19 @@ textApp.controller("MainController", ['$scope', function($scope) {
       $scope.answer = "";
     }
   };
+
+  var timeCheck = function() {
+    if (!$scope.counter) {
+      $timeout.cancel(myTimeout);
+      $scope.answer = "";
+    }
+  }
+  $scope.counter = 10;
+  $scope.onTimeout = function(){
+      $scope.counter--;
+      myTimeout = $timeout($scope.onTimeout,1000);
+      timeCheck();
+  }
+  var myTimeout = $timeout($scope.onTimeout,1000);
 
 }]);
