@@ -10,7 +10,8 @@ textApp.controller("MainController", ['$scope', '$timeout', function($scope, $ti
     "omgwtfbbq"
   ];
 
-  $scope.random = function () {return Math.floor(Math.random() * $scope.wordArray.length);
+  $scope.random = function () {
+    return Math.floor(Math.random() * $scope.wordArray.length);
   };
 
   $scope.wordNumber = $scope.random();
@@ -37,4 +38,10 @@ textApp.controller("MainController", ['$scope', '$timeout', function($scope, $ti
   };
   var myTimeout = $timeout($scope.onTimeout,1000);
 
+  var timeCheck = function() {
+    if (!$scope.counter) {
+      $timeout.cancel(myTimeout);
+      $scope.answer = "";
+    }
+  } 
 }]);
