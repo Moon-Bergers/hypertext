@@ -1,0 +1,81 @@
+
+/********************************************
+Tag Resets
+********************************************/
+
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+th,
+td,
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/*=================================*/
+
+h1 {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+h3 {
+  margin-bottom: 2%;
+  font-family: Helvetica;
+  font-weight: lighter;
+}
+
+span {
+  font-weight: bold;
+}
+
+.timing {
+  margin-bottom: 2%;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.font-elite {
+  font-family: 'Special Elite', cursive;
+}
+
+.input {
+  font-size: 18px;
+  width: 30%;
+  min-height: 40px;
+  border: 2px solid black;
+  margin-bottom: 2%;
+}
+
