@@ -44,7 +44,6 @@ section {
 
 h1 {
   margin-top: 2%;
-  margin-bottom: 2%;
 }
 
 h3 {
@@ -52,13 +51,24 @@ h3 {
   font-family: Helvetica;
   font-weight: lighter;
 }
-
-span {
-  font-weight: bold;
+.title {
+  text-shadow: 2px 2px 2px #888888;
 }
 
-.timing {
-  margin-bottom: 2%;
+.background-counter {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  font-size: 100vh;
+  color: rgba(0, 0, 0, 0.45);
+  z-index: -10;
+}
+
+.start-button {
+  display: block;
+  background-color: black;
+  color: white;
+  font-size: 14px;
 }
 
 .center {
@@ -73,9 +83,26 @@ span {
 
 .input {
   font-size: 18px;
-  width: 30%;
+  width: 350px;
   min-height: 40px;
-  border: 2px solid black;
+  border: 4px outset grey;
   margin-bottom: 2%;
 }
 
+.ruler {
+  width: 200px;
+  border-color: black;
+}
+
+.spacer {
+  margin-bottom: 2%;
+}
+
+@media screen and (max-width: 600px) {
+  .background-counter {
+    font-size: 80vh;
+  }
+  .spacer {
+    margin-bottom: 5%;
+  }
+}

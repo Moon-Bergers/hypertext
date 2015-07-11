@@ -9,16 +9,21 @@
     <title>hypertext</title>
   </head>
   <body class="center" ng-controller="MainController">
-    <h1 class="font-elite">hypertext</h1>
-    <h5 ng-hide="start">Click the text box to start!</h5>
-    <h3 ng-hide="!counter || !start">Please type the following:
-    <br>
-    <br>
-    <span class="font-elite">{{ wordArray[wordNumber] }}</span></h3>
-    <input class="font-elite input" ng-model="answer" ng-click="startGame()" ng-keyup="checker()" ng-disabled="!counter"></input>
-    <h5 ng-hide="!counter">Current Score: {{ score }}</h5>
-    <h5 class="timing">Time Left: {{ counter }}</h5>
-    <h2 ng-hide="counter">Game Over! Final Score is: {{score}}<button type="button" ng-click="resetGame()">Reset</button></h2>
+    <h1 class="background-counter font-elite" ng-hide="!countDownTimer">{{counter}}</h1>
+    <h1 class="font-elite title">hypertext</h1>
+    <hr class="ruler spacer">
+    <button type="button" ng-click="countDown()" ng-hide="start" class="start-button center spacer">Click for countdown!</button>
+    <button type="button" ng-click="resetGame()" class="start-button center spacer" ng-hide="!finish">Reset</button>
+    <div ng-hide="!counter || !start">
+      <h5 class="spacer">Please type the following:</h5>
+      <h2 class="spacer font-elite">{{ wordArray[wordNumber] }}</h2>
+    </div>
+    <input class="font-elite input" ng-model="answer" ng-keyup="checker()"></input>
+    <div ng-hide="!start || !counter">
+      <h5>Current Score: {{ score }}</h5>
+      <h5 class="spacer">Time Left: {{ counter }}</h5>
+    </div>
+    <h2 class="spacer" ng-hide="!finish">Game Over! Final Score is: {{score}}</h2>
     <!-- Scripts -->
     <script type="text/javascript" src="./js/app.js"></script>
   </body>
