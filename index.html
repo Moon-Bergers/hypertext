@@ -3,14 +3,21 @@
   <head>
     <meta charset="utf-8">
     <script type="text/javascript" src="./lib/angular.min.js"></script>
-    <title></title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <title>hypertext</title>
   </head>
-  <body ng-controller="MainController">
-    <h1>Typing Game!</h1>
-    <h3 ng-hide="!counter || !start">Please type the following: {{ wordArray[wordNumber] }}</h3>
-    <input ng-model="answer" ng-click="startGame()" ng-keyup="checker()" ng-disabled="!counter"></input>
-    <h5>Time Left: {{ counter }}</h5>
+  <body class="center" ng-controller="MainController">
+    <h1 class="font-elite">hypertext</h1>
+    <h5 ng-hide="start">Click the text box to start!</h5>
+    <h3 ng-hide="!counter || !start">Please type the following:
+    <br>
+    <br>
+    <span class="font-elite">{{ wordArray[wordNumber] }}</span></h3>
+    <input class="font-elite input" ng-model="answer" ng-click="startGame()" ng-keyup="checker()" ng-disabled="!counter"></input>
     <h5 ng-hide="!counter">Current Score: {{ score }}</h5>
+    <h5 class="timing">Time Left: {{ counter }}</h5>
     <h2 ng-hide="counter">Game Over! Final Score is: {{score}}<button type="button" ng-click="resetGame()">Reset</button></h2>
     <!-- Scripts -->
     <script type="text/javascript" src="./js/app.js"></script>

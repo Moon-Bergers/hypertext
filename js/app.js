@@ -41,11 +41,16 @@ textApp.controller("MainController", ['$scope', '$timeout', function($scope, $ti
   $scope.startGame = function() {
     $scope.start = true;
     var myTimeout = $timeout($scope.onTimeout,1000);
+    $scope.startGame = null;
   };
 
   $scope.resetGame = function() {
     $scope.start = false;
     $scope.counter = 10;
     $scope.score = 0;
-  }
+    $scope.startGame = function() {
+      $scope.start = true;
+      myTimeout = $timeout($scope.onTimeout,1000);
+    };
+  };
 }]);
