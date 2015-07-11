@@ -3,6 +3,7 @@ var textApp = angular.module("hypertext", []);
 textApp.controller("MainController", ['$scope', '$timeout', function($scope, $timeout) {
   $scope.score = 0;
   $scope.start = false;
+  $scope.counter = 10;
   $scope.wordArray = [
     "The cat in the hat",
     "The dog never came back",
@@ -31,7 +32,6 @@ textApp.controller("MainController", ['$scope', '$timeout', function($scope, $ti
       $scope.answer = "";
     }
   };
-  $scope.counter = 10;
   $scope.onTimeout = function(){
       $scope.counter--;
       myTimeout = $timeout($scope.onTimeout,1000);
@@ -41,16 +41,12 @@ textApp.controller("MainController", ['$scope', '$timeout', function($scope, $ti
   $scope.startGame = function() {
     $scope.start = true;
     var myTimeout = $timeout($scope.onTimeout,1000);
-    $scope.startGame = null;
+    $scope.counter = 10;
   };
 
   $scope.resetGame = function() {
     $scope.start = false;
     $scope.counter = 10;
     $scope.score = 0;
-    $scope.startGame = function() {
-      $scope.start = true;
-      myTimeout = $timeout($scope.onTimeout,1000);
-    };
   };
 }]);
