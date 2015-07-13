@@ -2,34 +2,21 @@ var textApp = angular.module("hypertext", []);
 
 textApp.controller("MainController", ['$scope', '$timeout', function($scope, $timeout) {
   var countDownCheck = true;
-  var wordArray = [
-    "The cat in the hat",
-    "The dog never came back",
-    "big tall trees",
-    "log log gol gol",
-    "omgwtfbbq"
-  ];
   $scope.countDownTimer = false;
   $scope.score = 0;
   $scope.start = false;
   $scope.finish = false;
   $scope.counter = 3;
-  $scope.currentWord = [];
 
   //=======================================//
 
-  //==================================//
-
-  var randomize = function () {
-    return Math.floor(Math.random() * wordArray.length);
-  };
-
-  $scope.currentWord[0] = wordArray[randomize()];
-
   $scope.checker = function() {
-    if($scope.start && !$scope.finish && $scope.answer === $scope.currentWord[0]) {
-      $scope.score += $scope.currentWord[0].length;
-      $scope.currentWord[0] = wordArray[randomize()];
+    if($scope.start && !$scope.finish && $scope.answer === newsText[0]) {
+      $scope.score += newsText[0].length;
+      newsText[0] = wordArray[randomize()];
+      dwAText = "", cnews=0, eline=0, cchar=0, mxText=0;
+      document.news.news2.value = "";
+      doNews();
       $scope.answer = "";
     }
   };
@@ -57,13 +44,14 @@ textApp.controller("MainController", ['$scope', '$timeout', function($scope, $ti
   $scope.countDown = function() {
     $scope.counter = 3;
     $scope.countDownTimer = true;
-    doNews()
+    newsText[0] = wordArray[randomize()];
     var myTimeout = $timeout($scope.onTimeout,1000);
   };
 
   $scope.startGame = function() {
+    doNews();
     $scope.start = true;
-    $scope.counter = 10;
+    $scope.counter = 25;
     var myTimeout = $timeout($scope.onTimeout,1000);
   };
 
@@ -74,7 +62,6 @@ textApp.controller("MainController", ['$scope', '$timeout', function($scope, $ti
     $scope.score = 0;
     countDownCheck = true;
     dwAText = "", cnews=0, eline=0, cchar=0, mxText=0;
-    newsText[0] = "";
     document.news.news2.value = "";
   };
 
