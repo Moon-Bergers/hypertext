@@ -16,7 +16,7 @@
     <button type="button" ng-click="resetGame()" class="start-button center spacer" ng-hide="!finish">Reset</button>
     <div ng-hide="!counter || !start">
       <h5 class="spacer">Please type the following:</h5>
-      <h2 class="spacer font-elite">{{ wordArray[wordNumber] }}</h2>
+      <h2 class="spacer font-elite">{{ currentWord }}</h2>
     </div>
     <input class="font-elite input" ng-model="answer" ng-keyup="checker()"></input>
     <div ng-hide="!start || !counter">
