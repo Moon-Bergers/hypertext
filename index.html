@@ -17,9 +17,9 @@
     <button type="button" ng-click="resetGame()" class="start-button center spacer" ng-hide="!finish">Reset</button>
     <div ng-hide="!counter || !start">
       <h5 class="spacer">Please type the following:</h5>
-      <h2 id="sentence" class="spacer font-elite">
-    <form name="news"><textarea readonly name="news2" cols=40 rows=4 wrap=virtual></textarea></form>
-      </h2>
+
+    <form class="center" name="news"><textarea readonly name="news2" cols=40 rows=4 wrap=virtual></textarea></form>
+
     </div>
     <input class="font-elite input" ng-model="answer" ng-keyup="checker()"></input>
     <div ng-hide="!start || !counter">
