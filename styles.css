@@ -98,7 +98,6 @@ h3 {
   width: 350px;
   min-height: 40px;
   border: 4px outset grey;
-  margin-bottom: 2%;
 }
 
 .ruler {
@@ -118,4 +117,40 @@ h3 {
   .spacer {
     margin-bottom: 5%;
   }
+}
+
+/*=============ANIMATE.CSS===============*/
+
+@-webkit-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 2000px, 0);
+    transform: translate3d(0, 2000px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 2000px, 0);
+    transform: translate3d(0, 2000px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInUpBig {
+  -webkit-animation-name: fadeInUpBig;
+  animation-name: fadeInUpBig;
+  animation-duration: 0s;
 }
