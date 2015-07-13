@@ -16,11 +16,17 @@ textApp.controller("MainController", ['$scope', '$timeout', '$http', function($s
     wordArray = data;
   });
 
+  //=======================================//
+
   $scope.checker = function() {
-    if($scope.start && !$scope.finish && $scope.answer === $scope.currentWord) {
-      $scope.score += $scope.currentWord.length;
+    if ($scope.start && !$scope.finish && $scope.answer === newsText[0]) {
+      $scope.score += newsText[0].length;
+      dwAText = "", cnews=0, eline=0, cchar=0, mxText=0;
+      document.news.news2.value = "";
       $scope.answer = "";
       nextWord();
+      newsText[0] = $scope.currentWord;
+      doNews();
     }
   };
 
@@ -38,9 +44,11 @@ textApp.controller("MainController", ['$scope', '$timeout', '$http', function($s
 
   $scope.startGame = function() {
     $scope.start = true;
-    $scope.counter = 10;
-    var myTimeout = $timeout($scope.onTimeout,1000);
+    $scope.counter = 25;
     nextWord();
+    newsText[0] = $scope.currentWord;
+    doNews();
+    var myTimeout = $timeout($scope.onTimeout,1000);
   };
 
   $scope.resetGame = function() {
@@ -49,6 +57,8 @@ textApp.controller("MainController", ['$scope', '$timeout', '$http', function($s
     $scope.counter = 10;
     $scope.score = 0;
     countDownCheck = true;
+    dwAText = "", cnews=0, eline=0, cchar=0, mxText=0;
+    document.news.news2.value = "";
   };
 
   function nextWord () {
