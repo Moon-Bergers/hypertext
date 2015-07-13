@@ -42,6 +42,13 @@ section {
 
 /*=================================*/
 
+textarea {
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: 'Special Elite', cursive;
+}
+
 h1 {
   margin-top: 2%;
 }
@@ -69,6 +76,7 @@ h3 {
   background-color: black;
   color: white;
   font-size: 14px;
+  font-family: Courier;
 }
 
 .center {
@@ -92,6 +100,7 @@ h3 {
 .ruler {
   width: 200px;
   border-color: black;
+  box-shadow: 2px 2px 2px #888888;
 }
 
 .spacer {
