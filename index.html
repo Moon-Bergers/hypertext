@@ -10,11 +10,17 @@
     <title>hypertext</title>
   </head>
   <body class="center" ng-controller="MainController">
-    <h1 class="background-counter font-elite" ng-hide="!countDownTimer">{{counter}}</h1>
+    <h1 class="background-counter font-elite" ng-hide="start || !countDownTimer">{{counter}}</h1>
     <h1 id="main-title" class="font-elite title">hypertext</h1>
     <hr class="ruler spacer">
-    <button type="button" ng-click="countDown()" ng-hide="start" class="start-button center spacer">Click for countdown!</button>
-    <button type="button" ng-click="resetGame()" class="start-button center spacer" ng-hide="!finish">Reset</button>
+    <div ng-hide="start" class="spacer font-courier">
+      <h3 class="font-elite">Choose Your Difficulty</h3>
+      <input type="radio" ng-disabled="countDownTimer" ng-model="value" value="1">Easy</input>
+      <input type="radio" ng-disabled="countDownTimer" ng-model="value" value="2">Medium</input>
+      <input type="radio" ng-disabled="countDownTimer" ng-model="value" value="3" class="spacer">Hard</input>
+      <button type="button" ng-click="countDown()" ng-disabled="countDownTimer" class="start-button center spacer font-courier">Click for countdown!</button>
+    </div>
+    <button type="button" ng-click="resetGame()" class="start-button center spacer font-courier" ng-hide="!finish">Reset</button>
     <div ng-hide="!counter || !start">
       <h5 class="spacer">Please type the following:</h5>
       <form class="center spacer" name="news"><textarea readonly name="news2" cols=40 rows=4 wrap=virtual></textarea></form>
@@ -27,6 +33,5 @@
     <h2 class="spacer fadeInUpBig font-elite" ng-hide="!finish">Game Over! Final Score is: {{score}}</h2>
     <!-- Scripts -->
     <script type="text/javascript" src="./js/app.js"></script>
-    <script type="text/javascript" src="./lib/text-typer.js"></script>
   </body>
 </html>
