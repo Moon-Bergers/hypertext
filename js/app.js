@@ -2,9 +2,9 @@ var textApp = angular.module("hypertext", []);
 
 textApp.controller("MainController", ['$scope', '$timeout', '$http', function($scope, $timeout, $http) {
 
+  var wordArray = [], randomWords = [], easyArray = [], mediumArray = [], hardArray = [];
   var countDownCheck = true;
-  var wordArray = [];
-  var randomWords = [];
+
   $scope.countDownTimer = false;
   $scope.start = false;
   $scope.finish = false;
@@ -12,8 +12,14 @@ textApp.controller("MainController", ['$scope', '$timeout', '$http', function($s
   $scope.counter = 3;
   $scope.currentWord = "a";
 
-  $http.get('js/data.json').success(function(data) {
-    wordArray = data;
+  $http.get('js/easy.json').success(function(data) {
+    easyArray = data;
+  });
+  $http.get('js/medium.json').success(function(data) {
+    mediumArray = data;
+  });
+  $http.get('js/hard.json').success(function(data) {
+    hardArray = data;
   });
 
   //=======================================//
@@ -37,6 +43,15 @@ textApp.controller("MainController", ['$scope', '$timeout', '$http', function($s
   };
 
   $scope.countDown = function() {
+    if ($scope.value == 1) {
+      wordArray = easyArray;
+    }
+    if ($scope.value == 2) {
+      wordArray = mediumArray;
+    }
+    if ($scope.value == 3) {
+      wordArray = hardArray;
+    }
     $scope.counter = 3;
     $scope.countDownTimer = true;
     var myTimeout = $timeout($scope.onTimeout,1000);
@@ -57,6 +72,7 @@ textApp.controller("MainController", ['$scope', '$timeout', '$http', function($s
     $scope.counter = 10;
     $scope.score = 0;
     countDownCheck = true;
+    randomWords = [];
     dwAText = "", cnews=0, eline=0, cchar=0, mxText=0;
     document.news.news2.value = "";
   };
