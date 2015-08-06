@@ -1,0 +1,27 @@
+{
+  "name": "hypertext",
+  "version": "1.0.0",
+  "description": "Speed Typing Game",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Moon-Bergers/hypertext.git"
+  },
+  "keywords": [
+    "typing",
+    "game",
+    "text"
+  ],
+  "author": "Moon Bergers <heartofnova@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Moon-Bergers/hypertext/issues"
+  },
+  "homepage": "https://github.com/Moon-Bergers/hypertext",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
