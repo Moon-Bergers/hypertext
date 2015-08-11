@@ -2,7 +2,7 @@
   "name": "hypertext",
   "version": "1.0.0",
   "description": "Speed Typing Game",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha"
   },
@@ -22,6 +22,14 @@
   },
   "homepage": "https://github.com/Moon-Bergers/hypertext",
   "dependencies": {
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "mongo": "^0.1.0",
+    "mongoose": "^4.1.2"
+  },
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "mocha": "^2.2.5"
   }
 }
